@@ -2,11 +2,12 @@ import datetime
 from django.db import models
 from django.utils import timezone
 from django.utils.timezone import datetime
+from datetime import timedelta
 
 class Question(models.Model):
    question_text = models.fieldName= models.CharField(max_length = 150)
    pub_date = models.fieldName = models.DateTimeField(auto_now=False, auto_now_add=False)
-   choice_set = 
+   
    def __str__(self):
       return self.question_text
 
