@@ -1,8 +1,11 @@
 import datetime
+import time
 from django.db import models
+from time import mktime
+
 from django.utils import timezone
 from django.utils.timezone import datetime, timedelta
-from datetime import timedelta
+from datetime import datetime
 
 class Question(models.Model):
    question_text = models.fieldName= models.CharField(max_length = 150)
@@ -15,6 +18,7 @@ class Question(models.Model):
       now = timezone.now()
       return now - datetime.timedelta(days=1) <= self.pub_date <= now
    
+
 
 class Choice(models.Model):
    question = models.fieldName = models.ForeignKey(Question, on_delete=models.CASCADE)
